@@ -1,0 +1,47 @@
+<script>
+import wepy from 'wepy'
+import 'wepy-async-function'
+
+import store from './store'
+
+// mocks配置
+import mocks from './mocks'
+
+// 数据流配置
+wepy.$store = store
+
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'pages/webView',
+      'pages/lanch'
+    ],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black'
+    }
+  }
+
+  constructor () {
+    super()
+    this.use('promisify')
+    this.use('requestfix')
+  }
+
+  // 小程序启动
+  onLaunch () {
+    // 启动mock
+    mocks.install()
+  }
+
+  // 页面加载
+  onShow () {
+  }
+
+  // 跳到后台
+  onHide () {
+  }
+}
+</script>

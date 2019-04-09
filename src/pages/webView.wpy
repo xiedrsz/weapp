@@ -1,0 +1,40 @@
+<style lang="less">
+  page {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+</style>
+
+<template>
+  <web-view src="{{url}}"></web-view>
+</template>
+
+<script>
+import wepy from 'wepy'
+import { connect } from 'wepy-redux'
+
+@connect({
+  title (state) {
+    return state.common.webCnf.title
+  },
+  url (state) {
+    return state.common.webCnf.url
+  }
+}, {
+})
+
+export default class WebView extends wepy.page {
+  config = {
+    navigationBarTitleText: this.title,
+    disableScroll: true
+  }
+
+  onLoad () {
+    let title = this.title
+    wepy.setNavigationBarTitle({
+      title
+    })
+  }
+}
+</script>

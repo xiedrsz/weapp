@@ -1,0 +1,17 @@
+{
+	"description": "A WePY project",
+	"setting": {
+		"urlCheck": false,
+		"es6": false,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true
+	},
+	"compileType": "miniprogram",
+	"appid": "wx57905149d5ae590e",
+	"projectname": "AII",
+	"miniprogramRoot": "dist/",
+	"libVersion": "2.0.4",
+	"condition": {}
+}

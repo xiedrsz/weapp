@@ -1,0 +1,40 @@
+<style lang="less">
+	page {
+		height: 100%;
+	}
+	.lanch {
+		height: 100%;
+		width: 100%;
+		background-image: linear-gradient(-180deg, #373D53 0%, #1D1D27 100%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		image {
+			width: calc(~"100% - 168px");
+		}
+	}
+</style>
+<template>
+	<view class="lanch">
+		<image src="../assets/img/logo.png" mode="widthFix"></image>
+	</view>
+</template>
+<script>
+import wepy from 'wepy'
+
+export default class Resume extends wepy.page {
+  config = {
+    navigationBarTitleText: 'LANCH',
+    navigationBarBackgroundColor: '#373D53',
+    backgroundColor: '#373D53',
+    navigationBarTextStyle: 'white'
+    // usingComponents: { // Todo }
+  }
+
+  methods = {
+  }
+
+  onLoad (query) {
+  }
+}
+</script>
